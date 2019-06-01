@@ -3,14 +3,16 @@ var goal, water, earth, fire, air, current;
 var wins = 0,
   losses = 0;
 function initialize() {
-  goal = Math.floor(Math.random() * 50) + 50;
-  water = Math.floor(Math.random() * 9) + 1;
-  earth = Math.floor(Math.random() * 9) + 1;
-  fire = Math.floor(Math.random() * 9) + 1;
-  air = Math.floor(Math.random() * 9) + 1;
-  current = 0;
-  $("#goal").text("Goal: " + goal);
-  $("#current").text("Current: " + current);
+  do {
+    goal = Math.floor(Math.random() * 50) + 50;
+    water = Math.floor(Math.random() * 9) + 1;
+    earth = Math.floor(Math.random() * 9) + 1;
+    fire = Math.floor(Math.random() * 9) + 1;
+    air = Math.floor(Math.random() * 9) + 1;
+    current = 0;
+    $("#goal").text("Goal: " + goal);
+    $("#current").text("Current: " + current);
+  } while (!isSolvable());
 }
 
 $(document).ready(function() {
@@ -18,11 +20,36 @@ $(document).ready(function() {
 });
 
 // TODO: Make sure the game is solvable
+function isSolvable() {
+  var addends = [earth, water, fire, air];
+  addends.forEach(addend => {
+    var temp = goal;
+    do {
+      if (isFactor(addend, temp)) return true;
+      else temp -= addend;
+    } while (temp > 0);
+  });
+  return false;
+}
+
+function getFactors(number) {
+  var factors = [1];
+  for (var i = 2; i < number / 2; i++) {
+    if (number % i === 0) factors.push(i);
+  }
+  return factors;
+}
+
+function isFactor(is, of) {
+  if (getFactors(of).includes(is)) return true;
+  else return false;
+}
 
 // Handle user selecting an element
 $("img").on("click", function() {
   accumulateChakra($(this).attr("id"));
-  gameOver();
+  if (current === goal) gameOver(true);
+  else if (current > goal) gameOver(false);
 });
 
 // Add the selected amount to the current
@@ -48,14 +75,13 @@ function accumulateChakra(element) {
 }
 
 // Check if the game has ended
-function gameOver() {
-  if (current === goal) {
+function gameOver(won) {
+  if (won) {
     alert("You Won!");
     wins++;
-    initialize();
-  } else if (current > goal) {
+  } else {
     alert("You Lost.");
     losses++;
-    initialize();
   }
+  initialize();
 }

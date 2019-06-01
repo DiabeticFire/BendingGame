@@ -1,5 +1,5 @@
-# GemGame
+# BendingGame
 
-A game where the user has to determine the value of 4 gems.
+A game where the user has to gather the correct amount of chakra from the four elements.
 
-Link: https://diabeticfire.github.io/GemGame/
+Link: https://diabeticfire.github.io/BendingGame/

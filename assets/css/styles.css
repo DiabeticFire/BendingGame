@@ -1,4 +1,17 @@
+body {
+  background-image: url(../images/Background.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: black;
+}
+
 img {
   width: 150px;
   height: 150px;
 }
+
+h1, p {
+    color: white;
+}
+
+/* TODO: Media Querry's

@@ -10,34 +10,57 @@
     <title>Bending Game</title>
   </head>
   <body>
-    <h1>Bending Game</h1>
-    <p id="goal">Goal:</p>
-    <p id="current">Current:</p>
-    <div class="images">
-      <img
-        src="https://vignette.wikia.nocookie.net/avatar/images/5/50/Waterbending_emblem.png/revision/latest/scale-to-width-down/150?cb=20130729182922"
-        alt="water"
-        class="element"
-        id="water"
-      />
-      <img
-        src="https://vignette.wikia.nocookie.net/avatar/images/e/e4/Earthbending_emblem.png/revision/latest?cb=20130729200732"
-        alt="earth"
-        class="element"
-        id="earth"
-      />
-      <img
-        src="https://vignette.wikia.nocookie.net/avatar/images/4/4b/Firebending_emblem.png/revision/latest/scale-to-width-down/150?cb=20130729203233"
-        alt="fire"
-        class="element"
-        id="fire"
-      />
-      <img
-        src="https://vignette.wikia.nocookie.net/avatar/images/8/82/Airbending_emblem.png/revision/latest?cb=20130729210446"
-        alt="air"
-        class="element"
-        id="air"
-      />
+    <div class="grid">
+      <div class="progress-bars">
+        <div class="spiritual-energy">
+          <div id="current">Spiritual Energy: 0</div>
+          <div class="outside">
+            <div class="inside">
+
+            </div>
+          </div>
+          <div id="goal">Goal: 0</div>
+        </div>
+        <div class="chakras">
+          <div id="wins">Chakras: 0</div>
+          <div class="outside">
+            <div class="inside">
+
+            </div>
+          </div>  
+        <div>Goal: 7</div>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Bending Game</h1>
+        <p>You are playing as Avatar Aang, and are in the process of opening your chakras. To be able to enter the Avatar State, you must successfully open all 7 chakras. To open a chakra you have to gather spiritual energy the elements, but as the universe is a constant state of flux, finding the balance between the elements will not be easy. Good Luck!</p>
+      </div>
+      <div class="images">
+        <img
+          src="assets/images/water.png"
+          alt="water"
+          class="element"
+          id="water"
+        />
+          <img
+          src="assets/images/earth.png"
+          alt="earth"
+          class="element"
+          id="earth"
+        />
+        <img
+          src="assets/images/fire.png"
+          alt="fire"
+          class="element"
+          id="fire"
+        />
+        <img
+          src="assets/images/air.png"
+          alt="air"
+          class="element"
+          id="air"
+        />
+      </div>    
     </div>
     <script src="assets/js/game.js"></script>
   </body>

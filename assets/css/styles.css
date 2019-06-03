@@ -1,8 +1,73 @@
 body {
   background-image: url(../images/Background.jpg);
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
-  background-size: auto;
-  background-color: black;
+  background-color: gray;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50vw 2fr 1fr;
+  grid-template-rows: 100vh;
+}
+
+.progress-bars {
+  display: grid;
+  align-content: end;
+  justify-content: center;
+  color: white;
+  gap: 1vh;
+
+}
+
+.spiritual-energy, .chakras {
+  display: grid;
+  grid-template-columns: 1fr 20vw 1fr;
+  column-gap: 1vh;
+}
+
+#wins {
+  justify-self: end;
+  align-self: center;
+}
+
+#current {
+  align-self: center;
+}
+
+#goal {
+  align-self: center;
+}
+
+.outside {
+  display: grid;
+  grid-template-rows: 1vh auto 1vh;
+  grid-template-columns: 1vh auto 1vh;
+  height: 5vh;
+  background-color: gray;
+  justify-items: stretch;
+  border-radius: 5vh;
+}
+
+.inside {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  height: 3vh;
+  background-color: purple;
+  justify-self: stretch;
+  border-radius: 3vh;
+}
+
+.content {
+  display: grid;
+  align-content: start;
+  gap: 10vh;
+}
+
+.images {
+  display: grid;
+  place-items: center;
+  align-content: space-evenly;
 }
 
 img {

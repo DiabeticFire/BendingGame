@@ -4,14 +4,14 @@ var wins = 0,
   losses = 0;
 function initialize() {
   do {
-    goal = Math.floor(Math.random() * 50) + 50;
-    water = Math.floor(Math.random() * 9) + 1;
-    earth = Math.floor(Math.random() * 9) + 1;
-    fire = Math.floor(Math.random() * 9) + 1;
-    air = Math.floor(Math.random() * 9) + 1;
+    goal = Math.floor(Math.random() * 30) + 30;
+    water = Math.floor(Math.random() * 9) + 3;
+    earth = Math.floor(Math.random() * 9) + 3;
+    fire = Math.floor(Math.random() * 9) + 3;
+    air = Math.floor(Math.random() * 9) + 3;
     current = 0;
     $("#goal").text("Goal: " + goal);
-  } while (!isSolvable());
+  } while (false);
 }
 
 $("document").ready(function() {
@@ -24,25 +24,24 @@ $("document").ready(function() {
 //   addends.forEach(addend => {
 //     var temp = goal;
 //     do {
-//       if (isFactor(addend, temp)) return true;
+//       if (addend % temp === 0) return true;
 //       else temp -= addend;
 //     } while (temp > 0);
 //   });
 //   return false;
 // }
 
-// function getFactors(number) {
-//   var factors = [1];
-//   for (var i = 2; i < number / 2; i++) {
-//     if (number % i === 0) factors.push(i);
-//   }
-//   return factors;
-// }
-
-// function isFactor(is, of) {
-//   if (getFactors(of).includes(is)) return true;
-//   else return false;
-// }
+function isSolvable(goal) {
+  var addends = [earth, water, fire, air];
+  addends.forEach(addend1 => {
+    do {
+      addends.forEach(addend => {
+        if (goal % addend === 0) return true;
+      });
+      goal -= addend1;
+    } while (goal > 0);
+  });
+}
 
 // Handle user selecting an element
 $("img").on("click", function() {

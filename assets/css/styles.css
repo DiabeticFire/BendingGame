@@ -39,6 +39,10 @@ body {
   align-self: center;
 }
 
+#chakras-goal {
+  align-self: center;
+}
+
 .outside {
   display: grid;
   grid-template-rows: 1vh auto 1vh;
